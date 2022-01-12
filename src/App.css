@@ -40,7 +40,7 @@ label {
 }
 .modal-container {
     display: block;
-    background-color: rgb(29, 29, 29);
+    background-color: rgba(9, 9, 9, 0.925);
     z-index: 1;
     top: 0;
     left: 0;
@@ -53,6 +53,40 @@ label {
 .remove-modal {
     display: none;
 }
+.message-container {
+    width: 450px;
+    height: 250px;
+    margin: auto;
+    background-color: #f7f7f7e6;
+    border-radius: 15px;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.message-container p {
+    font-size: 20px;
+    color: rgb(26, 149, 26);
+    flex-basis: 100%;
+    font-weight: 500;
+}
+button {
+    height: 2em;
+    width: 8em;
+    font-size: 16px;
+    border: unset;
+    border: 2px solid orange;
+    background-color: unset;
+    border-radius: 5px;
+    box-shadow: 7px 6px 16px 1px rgba(0, 0, 0, 0.24);
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
 @media screen and (max-width: 510px) {
     form {
         width: 90%;
