@@ -80,13 +80,18 @@ button {
     background-color: unset;
     border-radius: 5px;
     box-shadow: 7px 6px 16px 1px rgba(0, 0, 0, 0.24);
+    color: #300d38;
 }
 
 button:active {
     transform: scale(0.98);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
-
+.error-msg {
+    color: red;
+    text-align: center;
+    margin-top: 15px;
+}
 @media screen and (max-width: 510px) {
     form {
         width: 90%;

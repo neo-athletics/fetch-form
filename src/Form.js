@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 const Form = ({ setModal }) => {
     let [occupations, setOccupations] = useState([]);
     let [states, setStates] = useState([]);
-
+    let [httpStatus, setHttpStatus] = useState(0);
     let [userData, setUserData] = useState({
         name: "",
         email: "",
@@ -34,14 +34,18 @@ const Form = ({ setModal }) => {
         e.preventDefault();
         console.log(userData);
 
-        const res = await axios.post(
-            "https://frontend-take-home.fetchrewards.com/form",
-            userData
-        );
+        const res = await axios
+            .post("https://frontend-take-home.fetchrewards.com/form", userData)
+            .catch((error) => {
+                if (error.response) {
+                    setHttpStatus(error.response.status);
+                    console.log(error.response.status);
+                }
+            });
+
         const { status } = await res;
-
         if (status === 200) displayModal();
-
+        setHttpStatus(0);
         console.log(await res, status);
 
         setUserData({
@@ -57,6 +61,11 @@ const Form = ({ setModal }) => {
 
     return (
         <>
+            {httpStatus >= 400 && (
+                <p className="error-msg">
+                    Sorry an error occurred while submitting your form
+                </p>
+            )}
             <form action="" method="post" onSubmit={handleSubmit}>
                 <FormInputs
                     handleChange={handleChange}
