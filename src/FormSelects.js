@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const FormSelects = ({
     handleChange,
@@ -46,6 +47,14 @@ const FormSelects = ({
             </select>
         </>
     );
+};
+
+FormSelects.propTypes = {
+    handleChange: PropTypes.func.isRequired,
+    states: PropTypes.arrayOf(PropTypes.object).isRequired,
+    occupations: PropTypes.arrayOf(PropTypes.string).isRequired,
+    state: PropTypes.string.isRequired,
+    occupation: PropTypes.string.isRequired,
 };
 
 export default FormSelects;

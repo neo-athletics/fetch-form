@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const FormInputs = ({ handleChange, name, email, password }) => {
     return (
@@ -36,6 +37,13 @@ const FormInputs = ({ handleChange, name, email, password }) => {
             />
         </>
     );
+};
+
+FormInputs.propTypes = {
+    handleChange: PropTypes.func.isRequired,
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
 };
 
 export default FormInputs;

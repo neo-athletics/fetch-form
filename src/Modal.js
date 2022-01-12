@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Modal = ({ modal, setModal }) => {
     return (
@@ -7,6 +8,11 @@ const Modal = ({ modal, setModal }) => {
             <button onClick={() => setModal(false)}>close</button>
         </div>
     );
+};
+
+Modal.propTypes = {
+    modal: PropTypes.bool.isRequired,
+    setModal: PropTypes.func.isRequired,
 };
 
 export default Modal;

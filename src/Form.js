@@ -3,6 +3,7 @@ import fetchData from "./fetchData";
 import axios from "axios";
 import FormInputs from "./FormInputs";
 import FormSelects from "./FormSelects";
+import PropTypes from "prop-types";
 
 const Form = ({ setModal }) => {
     let [occupations, setOccupations] = useState([]);
@@ -74,6 +75,10 @@ const Form = ({ setModal }) => {
             </form>
         </>
     );
+};
+
+Form.propTypes = {
+    setModal: PropTypes.func.isRequired,
 };
 
 export default Form;
