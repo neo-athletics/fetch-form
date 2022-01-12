@@ -1,8 +1,41 @@
 form {
-    position: relative;
-    z-index: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 6fr;
+    width: 500px;
+    margin: 35px auto;
+    row-gap: 15px;
+}
+input:not(input[type="submit"]) {
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    border-radius: 5px;
+    border: none;
+    height: 1.7em;
+    padding-left: 5px;
+}
+select[name="occupation"] {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+}
+select[name="state"] {
+    grid-column: 1fr;
+}
+input[type="submit"] {
+    grid-row-start: 11;
+    background-color: #ffa900;
+    border: none;
+    height: 2em;
+    border-radius: 5px;
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    font-size: 16px;
+    font-weight: bold;
+    color: #300d38;
 }
 label {
+    grid-column-start: 1;
+    grid-column-end: span 3;
     color: whitesmoke;
 }
 .modal-container {
@@ -19,4 +52,9 @@ label {
 }
 .remove-modal {
     display: none;
+}
+@media screen and (max-width: 510px) {
+    form {
+        width: 90%;
+    }
 }
